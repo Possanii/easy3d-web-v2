@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-export function SignUpPage() {
+export function ForgotPasswordPage() {
   return (
     <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
       <div className="bg-muted hidden lg:block">
@@ -20,9 +20,9 @@ export function SignUpPage() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Sign Up</h1>
+            <h1 className="text-3xl font-bold">Forgot Password</h1>
             <p className="text-muted-foreground text-balance">
-              Enter your information below to create a new account
+              Enter your email below to recover your password
             </p>
           </div>
           <div className="grid gap-4">
@@ -35,16 +35,12 @@ export function SignUpPage() {
                 required
               />
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">Password</Label>
-              <Input id="password" type="password" required />
-            </div>
             <Button type="submit" className="w-full">
-              Register
+              Recover Password
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
-            Do you already have an account?{' '}
+            Did you remember your password?{' '}
             <Link to={'/sign-in'} className="underline">
               Sign in
             </Link>
