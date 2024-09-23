@@ -1,17 +1,23 @@
+import { useStore } from '@/stores/use-store'
 import { Navigate, Outlet } from 'react-router-dom'
+import { useShallow } from 'zustand/react/shallow'
 
 interface AuthGuardProps {
   isPrivate: boolean
 }
 
 export function AuthGuard({ isPrivate }: AuthGuardProps) {
-  const isSignedIn = false
+  const { isLoggedIn } = useStore(
+    useShallow((state) => ({
+      isLoggedIn: state.auth.isLoggedIn,
+    })),
+  )
 
-  if (!isSignedIn && isPrivate) {
+  if (!isLoggedIn && isPrivate) {
     return <Navigate to={'/sign-in'} replace />
   }
 
-  if (isSignedIn && !isPrivate) {
+  if (isLoggedIn && !isPrivate) {
     return <Navigate to={'/'} replace />
   }
 
