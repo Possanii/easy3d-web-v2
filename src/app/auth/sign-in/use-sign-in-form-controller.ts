@@ -28,7 +28,7 @@ export function useSignInFormController() {
   const {
     register,
     handleSubmit: hookFormHandleSubmit,
-    formState: { isLoading, errors },
+    formState: { isSubmitting, errors },
   } = useForm<ISignIn>({
     resolver: zodResolver(signInSchema),
   })
@@ -52,7 +52,7 @@ export function useSignInFormController() {
   return {
     register,
     handleSubmit,
-    isLoading,
+    isLoading: isSubmitting,
     errors,
   }
 }

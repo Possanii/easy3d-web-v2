@@ -45,7 +45,7 @@ export function SignInForm() {
           error={errors.password?.message}
         />
       </div>
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full" disabled={isLoading}>
         {isLoading ? (
           <Loader2 className="size-4 animate-spin" />
         ) : (
