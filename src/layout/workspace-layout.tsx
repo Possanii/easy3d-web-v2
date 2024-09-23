@@ -1,12 +1,23 @@
-import { Menu } from 'lucide-react'
+import { SidebarLayout, SidebarTrigger } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/ui/sidebar/app-sidebar'
+import Cookies from 'js-cookie'
 import { Outlet } from 'react-router-dom'
 
 export function WorkspaceLayout() {
+  console.log()
+
   return (
-    <div className="relative flex h-full w-full flex-col gap-6 px-6 py-10 md:flex-row md:gap-10 md:pl-[148px] md:pr-10">
-      <Menu className="block max-w-[24px] md:hidden" />
+    <>
+      <SidebarLayout defaultOpen={Cookies.get('sidebar:state') === 'true'}>
+        <AppSidebar />
+        <main className="flex flex-1 flex-col p-2 transition-all duration-300 ease-in-out">
+          <div className="h-full rounded-md border-2 border-dashed p-2">
+            <SidebarTrigger />
+          </div>
+        </main>
+      </SidebarLayout>
 
       <Outlet />
-    </div>
+    </>
   )
 }
