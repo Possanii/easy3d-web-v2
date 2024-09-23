@@ -10,6 +10,15 @@
     "sign-up": "Sign up"
   },
 
+  "forgot-password": {
+    "forgot-password": "Forgot Password",
+    "enter-your-email-to-recover-password": "Enter your email below to recover your password",
+    "email-label-input": "Email",
+    "recover-password": "Recover Password",
+    "did-you-remember-your-password": "Did you remember your password?",
+    "sign-in": "Sign in"
+  },
+
   "globals": {
     "something-went-wrong": "Something went wrong. Please try again later."
   }

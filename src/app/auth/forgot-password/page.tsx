@@ -1,14 +1,17 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
-import background from '@/assets/welcome-easy3-background.png'
+import background from '@/assets/slider-pt.webp'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 export function ForgotPasswordPage() {
+  const { t } = useTranslation()
+
   return (
     <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
-      <div className="bg-muted hidden lg:block">
+      <div className="hidden bg-muted lg:block">
         <img
           src={background}
           alt="easy3d default background image"
@@ -20,14 +23,18 @@ export function ForgotPasswordPage() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Forgot Password</h1>
-            <p className="text-muted-foreground text-balance">
-              Enter your email below to recover your password
+            <h1 className="text-3xl font-bold">
+              {t('forgot-password.forgot-password')}
+            </h1>
+            <p className="text-balance text-muted-foreground">
+              {t('forgot-password.enter-your-email-to-recover-password')}
             </p>
           </div>
           <div className="grid gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">
+                {t('forgot-password.email-label-input')}
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -36,13 +43,13 @@ export function ForgotPasswordPage() {
               />
             </div>
             <Button type="submit" className="w-full">
-              Recover Password
+              {t('forgot-password.recover-password')}
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
-            Did you remember your password?{' '}
+            {t('forgot-password.did-you-remember-your-password')}{' '}
             <Link to={'/sign-in'} className="underline">
-              Sign in
+              {t('forgot-password.sign-in')}
             </Link>
           </div>
         </div>
