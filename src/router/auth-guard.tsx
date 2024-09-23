@@ -9,7 +9,7 @@ interface AuthGuardProps {
 export function AuthGuard({ isPrivate }: AuthGuardProps) {
   const { isLoggedIn } = useStore(
     useShallow((state) => ({
-      isLoggedIn: state.auth.isLoggedIn,
+      isLoggedIn: state.isLoggedIn,
     })),
   )
 

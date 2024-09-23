@@ -1,9 +1,7 @@
 import { StoreSlice } from '../use-store'
 
 type AuthVariables = {
-  auth: {
-    isLoggedIn: boolean
-  }
+  isLoggedIn: boolean
 }
 
 type AuthActions = {
@@ -14,15 +12,17 @@ type AuthActions = {
 export type AuthStore = AuthVariables & AuthActions
 
 export const createAuthSlice: StoreSlice<AuthStore> = (set) => ({
-  auth: {
-    isLoggedIn: false,
-  },
+  isLoggedIn: false,
   signIn: () => {
-    set({ auth: { isLoggedIn: true } })
+    set(() => ({
+      isLoggedIn: true,
+    }))
   },
   logout: () => {
     localStorage.clear()
     sessionStorage.clear()
-    set({ auth: { isLoggedIn: false } })
+    set(() => ({
+      isLoggedIn: false,
+    }))
   },
 })

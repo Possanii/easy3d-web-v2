@@ -39,8 +39,6 @@ export function useSignInFormController() {
 
       signIn()
     } catch (err) {
-      console.log(err)
-
       if (err instanceof AxiosError) {
         const data = await err.response?.data
 

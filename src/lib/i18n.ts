@@ -10,7 +10,7 @@ i18n
   .use(LanguageDetector)
   .use(Backend)
   .init({
-    supportedLngs: ['pt', 'en', 'es'],
+    supportedLngs: ['pt-BR', 'en', 'es', 'pt-PT'],
     debug: env.VITE_NODE_ENV !== 'production',
     fallbackLng: 'en',
   })
