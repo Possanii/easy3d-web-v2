@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AxiosError } from 'axios'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
@@ -14,6 +15,8 @@ const signInSchema = z.object({
 type ISignIn = z.infer<typeof signInSchema>
 
 export function useSignInFormController() {
+  const { t } = useTranslation()
+
   const {
     register,
     handleSubmit: hookFormHandleSubmit,
@@ -31,7 +34,7 @@ export function useSignInFormController() {
 
         toast(data.message)
       } else {
-        toast('Something went wrong. Please try again later.')
+        toast(t('globals.something-went-wrong'))
       }
     }
   })

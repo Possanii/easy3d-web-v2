@@ -1,0 +1,16 @@
+{
+  "sign-in": {
+    "login": "Acceso",
+    "description": "Ingrese sus credenciales a continuación para iniciar sesión en su cuenta",
+    "email-label-input": "E-mail",
+    "password-label-input": "Contraseña",
+    "forgot-password": "Olvidaste tu contraseña?",
+    "sign-in-form-button": "Entrar",
+    "dont-have-an-account": "No tienes una cuenta?",
+    "sign-up": "Inscribirse"
+  },
+
+  "globals": {
+    "something-went-wrong": "Algo salió mal. Inténtelo de nuevo más tarde."
+  }
+}

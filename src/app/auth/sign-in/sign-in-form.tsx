@@ -1,4 +1,5 @@
 import { Loader2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -8,13 +9,15 @@ import { Label } from '@/components/ui/label'
 import { useSignInFormController } from './use-sign-in-form-controller'
 
 export function SignInForm() {
+  const { t } = useTranslation()
+
   const { register, handleSubmit, isLoading, errors } =
     useSignInFormController()
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
       <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">{t('sign-in.email-label-input')}</Label>
         <Input
           id="email"
           type="email"
@@ -26,12 +29,12 @@ export function SignInForm() {
       </div>
       <div className="grid gap-2">
         <div className="flex items-center">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('sign-in.password-label-input')}</Label>
           <Link
             to="/forgot-password"
             className="ml-auto inline-block text-sm underline"
           >
-            Forgot your password?
+            {t('sign-in.forgot-password')}
           </Link>
         </div>
         <Input
@@ -46,7 +49,7 @@ export function SignInForm() {
         {isLoading ? (
           <Loader2 className="size-4 animate-spin" />
         ) : (
-          <Label>Sign in</Label>
+          <Label>{t('sign-in.sign-in-form-button')}</Label>
         )}
       </Button>
     </form>
