@@ -6,9 +6,7 @@ import background from '@/assets/slider-pt.webp'
 import { SignInForm } from './sign-in-form'
 
 export function SignInPage() {
-  const { t, i18n } = useTranslation()
-
-  i18n.changeLanguage('pt')
+  const { t } = useTranslation()
 
   return (
     <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
