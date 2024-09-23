@@ -1,8 +1,9 @@
-import { redirect } from 'react-router-dom'
 import { StoreSlice } from '../use-store'
 
 type AuthVariables = {
-  isLoggedIn: boolean
+  auth: {
+    isLoggedIn: boolean
+  }
 }
 
 type AuthActions = {
@@ -13,16 +14,15 @@ type AuthActions = {
 export type AuthStore = AuthVariables & AuthActions
 
 export const createAuthSlice: StoreSlice<AuthStore> = (set) => ({
-  isLoggedIn: false,
-  signIn: () => {
-    set((prevState) => {
-      prevState.auth.isLoggedIn = true
-    })
-
-    redirect('/')
+  auth: {
+    isLoggedIn: false,
   },
-  logout: () =>
-    set((prevState) => {
-      prevState.auth.isLoggedIn = false
-    }),
+  signIn: () => {
+    set({ auth: { isLoggedIn: true } })
+  },
+  logout: () => {
+    localStorage.clear()
+    sessionStorage.clear()
+    set({ auth: { isLoggedIn: false } })
+  },
 })

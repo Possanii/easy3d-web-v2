@@ -4,7 +4,7 @@ import { immer } from 'zustand/middleware/immer'
 
 import { AuthStore, createAuthSlice } from './slices/auth-store'
 
-type Store = { auth: AuthStore }
+type Store = AuthStore
 
 export type StoreSlice<TSlice> = StateCreator<
   Store,
@@ -15,11 +15,9 @@ export type StoreSlice<TSlice> = StateCreator<
 
 export const useStore = create<Store>()(
   persist(
-    immer((...params) => ({
-      auth: createAuthSlice(...params),
-    })),
+    immer((...params) => createAuthSlice(...params)),
     {
-      name: 'presist:auth',
+      name: 'easy3d:store',
     },
   ),
 )
