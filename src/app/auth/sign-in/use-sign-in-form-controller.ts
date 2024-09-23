@@ -4,8 +4,10 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { z } from 'zod'
+import { useShallow } from 'zustand/react/shallow'
 
 import { SignInWithPassword } from '@/http/auth/sign-in-with-password'
+import { useStore } from '@/stores/use-store'
 
 const signInSchema = z.object({
   email: z.string().email(),
@@ -15,6 +17,12 @@ const signInSchema = z.object({
 type ISignIn = z.infer<typeof signInSchema>
 
 export function useSignInFormController() {
+  const { signIn } = useStore(
+    useShallow((state) => ({
+      signIn: state.auth.signIn,
+    })),
+  )
+
   const { t } = useTranslation()
 
   const {
@@ -28,6 +36,8 @@ export function useSignInFormController() {
   const handleSubmit = hookFormHandleSubmit(async (form) => {
     try {
       await SignInWithPassword(form)
+
+      signIn()
     } catch (err) {
       if (err instanceof AxiosError) {
         const data = await err.response?.data
