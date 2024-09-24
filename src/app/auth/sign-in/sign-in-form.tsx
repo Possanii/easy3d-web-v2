@@ -31,7 +31,7 @@ export function SignInForm() {
         <div className="flex items-center">
           <Label htmlFor="password">{t('sign-in.password-label-input')}</Label>
           <Link
-            to="/forgot-password"
+            to="/auth/forgot-password"
             className="ml-auto inline-block text-sm underline"
           >
             {t('sign-in.forgot-password')}

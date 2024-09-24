@@ -2,9 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import background from '@/assets/slider-pt.webp'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { ForgotPasswordForm } from './forgot-password-form'
 
 export function ForgotPasswordPage() {
   const { t } = useTranslation()
@@ -30,25 +28,10 @@ export function ForgotPasswordPage() {
               {t('forgot-password.enter-your-email-to-recover-password')}
             </p>
           </div>
-          <div className="grid gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="email">
-                {t('forgot-password.email-label-input')}
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              {t('forgot-password.recover-password')}
-            </Button>
-          </div>
+          <ForgotPasswordForm />
           <div className="mt-4 text-center text-sm">
             {t('forgot-password.did-you-remember-your-password')}{' '}
-            <Link to={'/sign-in'} className="underline">
+            <Link to={'/auth/sign-in'} className="underline">
               {t('forgot-password.sign-in')}
             </Link>
           </div>

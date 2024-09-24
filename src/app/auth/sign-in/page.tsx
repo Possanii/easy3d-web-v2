@@ -21,7 +21,7 @@ export function SignInPage() {
           <SignInForm />
           <div className="mt-4 text-center text-sm">
             {t('sign-in.dont-have-an-account')}{' '}
-            <Link to={'/sign-up'} className="underline">
+            <Link to={'/auth/sign-up'} className="underline">
               {t('sign-in.sign-up')}
             </Link>
           </div>
