@@ -1,0 +1,101 @@
+import { Button } from '@/components/ui/button'
+import CountryDropdown from '@/components/ui/countries-select'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { StepHeader } from '@/components/ui/multi-step-header'
+import StateDropdown from '@/components/ui/states-select'
+import { StepperFooter, StepperPreviousButton } from '@/components/ui/stepper'
+import { useAddressStepController } from './use-address-step-controller'
+
+export function AddressStep() {
+  const { form } = useAddressStepController()
+
+  return (
+    <div>
+      <StepHeader title="Address" description="Your address information" />
+
+      <div className="space-y-4">
+        <div className="grid gap-2 lg:grid-cols-2">
+          <div className="grid gap-2 lg:col-span-1">
+            <Label htmlFor="country">Country :</Label>
+            <CountryDropdown
+              control={form.control}
+              name="addressStep.country"
+              error={form.formState.errors.addressStep?.country?.message}
+            />
+          </div>
+
+          <div className="grid gap-2 lg:col-span-1">
+            <Label htmlFor="state">State :</Label>
+            <StateDropdown
+              control={form.control}
+              watch={form.watch}
+              name="addressStep.state"
+              error={form.formState.errors.addressStep?.state?.message}
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-2 lg:grid-cols-6">
+          <div className="grid gap-2 lg:col-span-4">
+            <Label htmlFor="street">Street :</Label>
+            <Input
+              id="street"
+              required
+              {...form.register('addressStep.street')}
+              error={form.formState.errors.addressStep?.street?.message}
+            />
+          </div>
+
+          <div className="grid gap-2 lg:col-span-2">
+            <Label htmlFor="number">Number :</Label>
+            <Input
+              id="number"
+              required
+              {...form.register('addressStep.number')}
+              error={form.formState.errors.addressStep?.number?.message}
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-2 lg:grid-cols-6">
+          <div className="grid gap-2 lg:col-span-4">
+            <Label htmlFor="city">City :</Label>
+            <Input
+              id="city"
+              required
+              {...form.register('addressStep.city')}
+              error={form.formState.errors.addressStep?.city?.message}
+            />
+          </div>
+
+          <div className="grid gap-2 lg:col-span-2">
+            <Label htmlFor="zip">Zip code :</Label>
+            <Input
+              id="zip"
+              required
+              {...form.register('addressStep.zip')}
+              error={form.formState.errors.addressStep?.zip?.message}
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-2">
+          <Label htmlFor="complement">Complement :</Label>
+          <Input
+            id="complement"
+            {...form.register('addressStep.complement')}
+            error={form.formState.errors.addressStep?.complement?.message}
+          />
+        </div>
+      </div>
+
+      <StepperFooter>
+        <StepperPreviousButton />
+        <Button disabled={form.formState.isSubmitting} type="submit" size="sm">
+          Sign Up
+        </Button>
+      </StepperFooter>
+    </div>
+  )
+}

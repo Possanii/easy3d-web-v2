@@ -13,7 +13,7 @@ export interface InputProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, error, ...props }, ref) => {
     return (
-      <div className="grid gap-2">
+      <div className="grid w-full gap-2">
         <input
           type={type}
           className={cn(
@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
         {error && (
           <div className="mr-4 flex items-center gap-2">
-            <AlertCircleIcon className="text-destructive h-[14px] w-[14px]" />
+            <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />
             <PSmall className="text-destructive">{error}</PSmall>
           </div>
         )}

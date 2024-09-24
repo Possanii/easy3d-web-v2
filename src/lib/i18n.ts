@@ -5,6 +5,8 @@ import { initReactI18next } from 'react-i18next'
 
 import { env } from '@/config/env'
 
+export type suportedLanguages = 'pt-BR' | 'en' | 'es' | 'pt-PT'
+
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)

@@ -19,6 +19,12 @@
     "sign-in": "Sign in"
   },
 
+  "customer-type-select": {
+    "CLINICA_RADIOLOGICA_ODONTOLOGICA": "Dental radiology clinic",
+    "CLINICA_RADIOLOGICA_MEDICA": "Medical radiology clinic",
+    "CIRURGIAO_DENTISTA": "Dental surgeon"
+  },
+
   "globals": {
     "something-went-wrong": "Something went wrong. Please try again later."
   }
