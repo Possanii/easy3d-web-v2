@@ -1,3 +1,5 @@
+import { logout } from '@/http/auth/logout'
+import { clearStorages } from '@/utils/clear-storages'
 import { StoreSlice } from '../use-store'
 
 type AuthVariables = {
@@ -18,9 +20,9 @@ export const createAuthSlice: StoreSlice<AuthStore> = (set) => ({
       isLoggedIn: true,
     }))
   },
-  logout: () => {
-    localStorage.clear()
-    sessionStorage.clear()
+  logout: async () => {
+    await logout()
+    clearStorages()
     set(() => ({
       isLoggedIn: false,
     }))

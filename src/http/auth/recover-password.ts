@@ -1,4 +1,4 @@
-import { api } from '@/lib/axios-client'
+import api from '@/lib/axios-client'
 
 interface IRecoverPasswordParams {
   code: string

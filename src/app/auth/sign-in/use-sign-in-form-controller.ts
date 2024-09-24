@@ -44,6 +44,7 @@ export function useSignInFormController() {
 
         toast(data.message)
       } else {
+        console.log(err)
         toast(t('globals.something-went-wrong'))
       }
     }

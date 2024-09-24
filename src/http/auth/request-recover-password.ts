@@ -1,4 +1,4 @@
-import { api } from '@/lib/axios-client'
+import api from '@/lib/axios-client'
 
 interface IRequestRecoverPasswordParams {
   email: string
@@ -7,5 +7,7 @@ interface IRequestRecoverPasswordParams {
 export async function requestRecoverPassword(
   data: IRequestRecoverPasswordParams,
 ) {
-  await api.post('/password/recover', data)
+  const result = await api.post('/password/recover', data)
+
+  return result
 }
