@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        <Small>{children}</Small>
+        <Small className="text-center">{children}</Small>
       </Comp>
     )
   },
