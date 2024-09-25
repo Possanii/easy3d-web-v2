@@ -1,4 +1,5 @@
 import { CustomerTypeSelect } from '@/components/ui/customer-type-select'
+import { DocumentTypeSelect } from '@/components/ui/document-type-select'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { StepHeader } from '@/components/ui/multi-step-header'
@@ -56,6 +57,21 @@ export function PersonalDataStep() {
         </div>
 
         <div className="grid items-start gap-2 lg:grid-cols-2">
+          {GetCountryBasedOnTimezone() !== 'Brazil' && (
+            <div className="flex flex-1 flex-col gap-2">
+              <Label isRequired htmlFor="kind">
+                Document Type :
+              </Label>
+              <DocumentTypeSelect
+                control={form.control}
+                name="personalDataStep.documentType"
+                error={
+                  form.formState.errors.personalDataStep?.documentType?.message
+                }
+              />
+            </div>
+          )}
+
           <div className="flex flex-1 flex-col gap-2">
             <Label isRequired htmlFor="identity">
               Document :

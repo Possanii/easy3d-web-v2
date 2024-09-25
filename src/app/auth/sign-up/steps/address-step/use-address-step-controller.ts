@@ -1,5 +1,5 @@
 import { FormData } from '@/app/auth/sign-up/sign-up-form'
-import { GetUserLocale } from '@/utils/get-user-locale'
+import { getUserLocale } from '@/utils/get-user-locale'
 import { useFormContext } from 'react-hook-form'
 import { isPostalCode, PostalCodeLocale } from 'validator'
 import { z } from 'zod'
@@ -12,7 +12,7 @@ export const addressStepSchema = z.object({
   zip: z
     .string()
     .min(1, 'Please, provide a valid zip.')
-    .refine((zip) => isPostalCode(zip, GetUserLocale() as PostalCodeLocale), {
+    .refine((zip) => isPostalCode(zip, getUserLocale() as PostalCodeLocale), {
       message: 'Please, provide a valid postal code.',
     }),
   country: z.string().min(1, 'Please, provide a valid country.'),

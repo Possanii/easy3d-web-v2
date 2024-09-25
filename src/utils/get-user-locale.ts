@@ -1,7 +1,7 @@
 import countries from '@/data/countries.json'
 import { GetCountryBasedOnTimezone } from './get-country-based-on-timezone'
 
-export function GetUserLocale(): string {
+export function getUserLocale(): string {
   if (typeof Intl !== 'undefined') {
     const currentCountry = GetCountryBasedOnTimezone()
 

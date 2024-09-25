@@ -25,6 +25,11 @@
     "CIRURGIAO_DENTISTA": "Dental surgeon"
   },
 
+  "document-type-select": {
+    "passport": "Passport",
+    "document": "Document"
+  },
+
   "globals": {
     "something-went-wrong": "Something went wrong. Please try again later."
   }
