@@ -15,7 +15,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { ScrollArea, ScrollBar } from './scroll-area'
 
-export function CountrySwitcher() {
+export function LanguageSwitcher() {
   const {
     openLanguageDropdown,
     setOpenLanguageDropdown,
@@ -39,9 +39,9 @@ export function CountrySwitcher() {
           aria-expanded={openLanguageDropdown}
           className="w-20 justify-between rounded-[6px] border !border-easy3d-primary focus:!outline-none focus:!ring-1 focus:!ring-easy3d-primary focus:!ring-offset-easy3d-primary"
         >
-          <Base>
+          <span className="flex items-center justify-between">
             {languages ? (
-              <Base>
+              <span className="text-balance text-base font-normal leading-[1.5] text-accent-foreground">
                 {
                   languages.find(
                     (language) =>
@@ -49,12 +49,12 @@ export function CountrySwitcher() {
                       languageValue.toLowerCase(),
                   )?.flag
                 }
-              </Base>
+              </span>
             ) : (
-              <Base>Select Language...</Base>
+              <span>Select Language...</span>
             )}
-          </Base>
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          </span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-40 rounded-[6px] p-0">
