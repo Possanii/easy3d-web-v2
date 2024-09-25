@@ -32,6 +32,8 @@ import { NavSecondary } from '@/components/ui/sidebar/nav-secondary'
 import { NavUser } from '@/components/ui/sidebar/nav-user'
 import { StorageCard } from '@/components/ui/sidebar/storage-card'
 import { TeamSwitcher } from '@/components/ui/sidebar/team-switcher'
+import { useUser } from '@/hooks/use-user'
+
 const data = {
   teams: [
     {
@@ -50,11 +52,6 @@ const data = {
       plan: 'Free',
     },
   ],
-  user: {
-    name: 'shadcn',
-    email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
-  },
   navMain: [
     {
       title: 'Playground',
@@ -246,6 +243,8 @@ const data = {
 }
 
 export function AppSidebar() {
+  const user = useUser()
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -269,7 +268,7 @@ export function AppSidebar() {
         </SidebarItem>
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user!} />
       </SidebarFooter>
     </Sidebar>
   )

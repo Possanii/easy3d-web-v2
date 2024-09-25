@@ -7,7 +7,7 @@ import { useStore } from '@/stores/use-store'
 import Cookies from 'js-cookie'
 import { useShallow } from 'zustand/react/shallow'
 
-interface IUserData {
+export interface IUserData {
   id: string
   name: string
   email: string
@@ -56,6 +56,6 @@ export function useUser() {
 
     return parsedUserData
   } catch (err) {
-    console.log(err)
+    logout()
   }
 }
