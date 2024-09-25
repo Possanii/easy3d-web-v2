@@ -1,5 +1,6 @@
 import { FormData } from '@/app/auth/sign-up/sign-up-form'
 import { useStepper } from '@/components/ui/stepper/useStepper'
+import { GetCountryBasedOnTimezone } from '@/utils/get-country-based-on-timezone'
 import { getUserLocale } from '@/utils/get-user-locale'
 import { isValidPhoneNumber } from 'libphonenumber-js'
 import { useFormContext } from 'react-hook-form'
@@ -40,6 +41,25 @@ export const personalDataStepSchema = z
     {
       path: ['identity'],
       message: 'Please, provide a valid passport number.',
+    },
+  )
+  .refine(
+    (form) => {
+      if (GetCountryBasedOnTimezone() === 'Brazil') {
+        const formatedIdentity = form.identity.replace(/\D/g, '')
+
+        if (
+          (formatedIdentity.length !== 11 && formatedIdentity.length !== 14) ||
+          !Number(formatedIdentity)
+        ) {
+          return false
+        }
+      }
+      return true
+    },
+    {
+      path: ['identity'],
+      message: 'Por favor, insira um CPF ou CNPJ válido.',
     },
   )
 

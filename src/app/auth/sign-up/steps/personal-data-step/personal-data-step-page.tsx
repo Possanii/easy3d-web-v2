@@ -1,6 +1,7 @@
 import { CustomerTypeSelect } from '@/components/ui/customer-type-select'
 import { DocumentTypeSelect } from '@/components/ui/document-type-select'
 import { Input } from '@/components/ui/input'
+import { InputCpfCpnj } from '@/components/ui/input-cpf-cnpj'
 import { Label } from '@/components/ui/label'
 import { StepHeader } from '@/components/ui/multi-step-header'
 import { InputPhone } from '@/components/ui/phone-input'
@@ -76,13 +77,25 @@ export function PersonalDataStep() {
             <Label isRequired htmlFor="identity">
               Document :
             </Label>
-            <Input
-              id="identity"
-              required
-              {...form.register('personalDataStep.identity')}
-              description="Enter the number of the official document used in your country, such as a passport, ID, NIF..."
-              error={form.formState.errors.personalDataStep?.identity?.message}
-            />
+            {GetCountryBasedOnTimezone() === 'Brazil' ? (
+              <InputCpfCpnj
+                control={form.control}
+                name="personalDataStep.identity"
+                error={
+                  form.formState.errors.personalDataStep?.identity?.message
+                }
+              />
+            ) : (
+              <Input
+                id="identity"
+                required
+                {...form.register('personalDataStep.identity')}
+                description="Enter the number of the official document used in your country, such as a passport, ID, NIF..."
+                error={
+                  form.formState.errors.personalDataStep?.identity?.message
+                }
+              />
+            )}
           </div>
 
           {GetCountryBasedOnTimezone() === 'Brazil' && (
