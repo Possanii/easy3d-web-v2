@@ -17,6 +17,9 @@ export const addressStepSchema = z.object({
     }),
   country: z.string().min(1, 'Please, provide a valid country.'),
   complement: z.string().optional(),
+  terms: z.boolean().refine((term) => term, {
+    message: 'Please, accept terms and conditions.',
+  }),
 })
 
 export function useAddressStepController() {

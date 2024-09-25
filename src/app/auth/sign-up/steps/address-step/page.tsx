@@ -1,10 +1,14 @@
+import { Base } from '@/components/typography/text/base'
 import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import CountryDropdown from '@/components/ui/countries-select'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { LabelError } from '@/components/ui/label-error'
 import { StepHeader } from '@/components/ui/multi-step-header'
 import StateDropdown from '@/components/ui/states-select'
 import { StepperFooter, StepperPreviousButton } from '@/components/ui/stepper'
+import { Controller } from 'react-hook-form'
 import { useAddressStepController } from './use-address-step-controller'
 
 export function AddressStep() {
@@ -97,6 +101,37 @@ export function AddressStep() {
             {...form.register('addressStep.complement')}
             error={form.formState.errors.addressStep?.complement?.message}
           />
+        </div>
+
+        <div className="grid gap-2">
+          <div className="flex items-center space-x-2">
+            <Controller
+              name="addressStep.terms"
+              control={form.control}
+              render={({ field: { value, onChange } }) => (
+                <Checkbox
+                  checked={value}
+                  onCheckedChange={onChange}
+                  id="terms"
+                />
+              )}
+            />
+            <Base>
+              Accept{' '}
+              <a
+                href="https://nextpoint.com.br/wp-content/uploads/2022/07/politica-de-privacidade.pdf"
+                className="text-easy3d-primary"
+                target="_blank"
+              >
+                terms and conditions.
+              </a>
+            </Base>
+          </div>
+          {form.formState.errors.addressStep?.terms?.message && (
+            <LabelError
+              error={form.formState.errors.addressStep?.terms?.message}
+            />
+          )}
         </div>
       </div>
 
