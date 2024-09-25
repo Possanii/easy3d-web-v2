@@ -8,7 +8,7 @@ export function Small({ children, className }: ISmall) {
   return (
     <p
       className={cn(
-        'text-sm font-normal leading-[1.5] text-accent-foreground',
+        'w-full items-center text-start text-sm font-normal leading-[1.5] text-accent-foreground',
         className,
       )}
     >

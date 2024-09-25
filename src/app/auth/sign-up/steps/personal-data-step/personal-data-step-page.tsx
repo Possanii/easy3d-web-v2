@@ -8,6 +8,7 @@ import {
   StepperNextButton,
   StepperPreviousButton,
 } from '@/components/ui/stepper'
+import { GetCountryBasedOnTimezone } from '@/utils/get-country-based-on-timezone'
 import { usePersonalDataStepController } from './use-personal-data-step-controller'
 
 export function PersonalDataStep() {
@@ -23,6 +24,7 @@ export function PersonalDataStep() {
           <CustomerTypeSelect
             control={form.control}
             name="personalDataStep.kind"
+            error={form.formState.errors.personalDataStep?.kind?.message}
           />
         </div>
 
@@ -49,26 +51,28 @@ export function PersonalDataStep() {
 
         <div className="flex gap-2">
           <div className="flex flex-1 flex-col gap-2">
-            <Label htmlFor="identity">Identity :</Label>
+            <Label htmlFor="identity">Document :</Label>
             <Input
               id="identity"
               required
               {...form.register('personalDataStep.identity')}
-              description="oi, belezinha?"
+              description="Enter the number of the official document used in your country, such as a passport, ID, NIF..."
               error={form.formState.errors.personalDataStep?.identity?.message}
             />
           </div>
 
-          <div className="flex flex-1 flex-col gap-2">
-            <Label htmlFor="enrollment">Enrollment :</Label>
-            <Input
-              id="enrollment"
-              {...form.register('personalDataStep.enrollment')}
-              error={
-                form.formState.errors.personalDataStep?.enrollment?.message
-              }
-            />
-          </div>
+          {GetCountryBasedOnTimezone() === 'Brazil' && (
+            <div className="flex flex-1 flex-col gap-2">
+              <Label htmlFor="enrollment">Enrollment :</Label>
+              <Input
+                id="enrollment"
+                {...form.register('personalDataStep.enrollment')}
+                error={
+                  form.formState.errors.personalDataStep?.enrollment?.message
+                }
+              />
+            </div>
+          )}
         </div>
       </div>
 

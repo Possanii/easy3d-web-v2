@@ -5,6 +5,11 @@ import { useFormContext } from 'react-hook-form'
 import { z } from 'zod'
 
 export const personalDataStepSchema = z.object({
+  kind: z.enum([
+    'CLINICA_RADIOLOGICA_ODONTOLOGICA',
+    'CLINICA_RADIOLOGICA_MEDICA',
+    'CIRURGIAO_DENTISTA',
+  ]),
   name: z
     .string({ message: 'Please, provide your name.' })
     .min(1, { message: 'Name is required.' }),
@@ -20,11 +25,6 @@ export const personalDataStepSchema = z.object({
   enrollment: z
     .string({ message: 'Please, provide your enrollment.' })
     .optional(),
-  kind: z.enum([
-    'CLINICA_RADIOLOGICA_ODONTOLOGICA',
-    'CLINICA_RADIOLOGICA_MEDICA',
-    'CIRURGIAO_DENTISTA',
-  ]),
 })
 
 export function usePersonalDataStepController() {
