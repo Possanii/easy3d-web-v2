@@ -52,7 +52,7 @@ const StateDropdown = ({ control, name, error, watch }: StateDropdownProps) => {
   const S = SD.filter((state) => state.country_name === sentenceCase(country))
 
   return (
-    <div className="ga-2 grid">
+    <div className="grid gap-2">
       <Controller
         name={name}
         control={control}
@@ -66,23 +66,25 @@ const StateDropdown = ({ control, name, error, watch }: StateDropdownProps) => {
                 className="inline-flex h-10 items-center justify-between self-start rounded-md border border-stone-200 bg-white px-4 py-2 text-sm font-medium ring-offset-white transition-colors hover:bg-stone-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 disabled={!country || S.length === 0}
               >
-                <div className="flex items-center justify-between">
+                <span className="flex items-center justify-between">
                   {value ? (
-                    <div className="flex items-end gap-2">
-                      <Base className="max-w-[200px] truncate text-nowrap lg:max-w-[140px]">
+                    <span className="flex items-end gap-2">
+                      <span className="max-w-[200px] truncate text-nowrap text-base font-normal leading-[1.5] text-accent-foreground lg:max-w-[140px]">
                         {
                           S.find(
                             (state) =>
                               lowerCase(state.name) === lowerCase(value),
                           )?.name
                         }
-                      </Base>
-                    </div>
+                      </span>
+                    </span>
                   ) : (
-                    <Base>Select State...</Base>
+                    <span className="text-balance text-base font-normal leading-[1.5] text-accent-foreground">
+                      Select State...
+                    </span>
                   )}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                </div>
+                </span>
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[250px] rounded-[6px] p-0">

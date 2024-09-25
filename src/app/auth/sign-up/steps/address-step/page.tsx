@@ -15,9 +15,11 @@ export function AddressStep() {
       <StepHeader title="Address" description="Your address information" />
 
       <div className="space-y-4">
-        <div className="grid gap-2 lg:grid-cols-2">
+        <div className="grid items-start gap-2 lg:grid-cols-2">
           <div className="grid gap-2 lg:col-span-1">
-            <Label htmlFor="country">Country :</Label>
+            <Label isRequired htmlFor="country">
+              Country :
+            </Label>
             <CountryDropdown
               control={form.control}
               name="addressStep.country"
@@ -26,7 +28,9 @@ export function AddressStep() {
           </div>
 
           <div className="grid gap-2 lg:col-span-1">
-            <Label htmlFor="state">State :</Label>
+            <Label isRequired htmlFor="state">
+              State :
+            </Label>
             <StateDropdown
               control={form.control}
               watch={form.watch}
@@ -36,9 +40,11 @@ export function AddressStep() {
           </div>
         </div>
 
-        <div className="grid gap-2 lg:grid-cols-6">
+        <div className="grid items-start gap-2 lg:grid-cols-6">
           <div className="grid gap-2 lg:col-span-4">
-            <Label htmlFor="street">Street :</Label>
+            <Label isRequired htmlFor="street">
+              Street :
+            </Label>
             <Input
               id="street"
               required
@@ -58,9 +64,11 @@ export function AddressStep() {
           </div>
         </div>
 
-        <div className="grid gap-2 lg:grid-cols-6">
+        <div className="grid items-start gap-2 lg:grid-cols-6">
           <div className="grid gap-2 lg:col-span-4">
-            <Label htmlFor="city">City :</Label>
+            <Label isRequired htmlFor="city">
+              City :
+            </Label>
             <Input
               id="city"
               required
@@ -70,7 +78,9 @@ export function AddressStep() {
           </div>
 
           <div className="grid gap-2 lg:col-span-2">
-            <Label htmlFor="zip">Zip code :</Label>
+            <Label isRequired htmlFor="zip">
+              Postal code :
+            </Label>
             <Input
               id="zip"
               required

@@ -91,31 +91,33 @@ const CountryDropdown = ({
                 className="inline-flex h-10 items-center justify-between self-start overflow-hidden rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 disabled={disabled}
               >
-                <div className="flex items-center justify-between">
+                <span className="flex items-center justify-between">
                   {value ? (
-                    <div className="flex items-end gap-2">
-                      <Base>
+                    <span className="flex items-end gap-2">
+                      <span className="text-balance text-base font-normal leading-[1.5] text-accent-foreground">
                         {
                           countries.find(
                             (country) =>
                               lowerCase(country.name) === lowerCase(value),
                           )?.emoji
                         }
-                      </Base>
-                      <Base className="max-w-[200px] truncate text-nowrap lg:max-w-[140px]">
+                      </span>
+                      <span className="max-w-[200px] truncate text-nowrap text-base font-normal leading-[1.5] text-accent-foreground lg:max-w-[140px]">
                         {
                           countries.find(
                             (country) =>
                               lowerCase(country.name) === lowerCase(value),
                           )?.name
                         }
-                      </Base>
-                    </div>
+                      </span>
+                    </span>
                   ) : (
-                    <Base>Select Country...</Base>
+                    <span className="text-balance text-base font-normal leading-[1.5] text-accent-foreground">
+                      Select Country...
+                    </span>
                   )}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                </div>
+                </span>
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[250px] rounded-[6px] p-0">

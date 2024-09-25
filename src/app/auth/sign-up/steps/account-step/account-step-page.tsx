@@ -13,7 +13,9 @@ export function AccountStep() {
 
       <div className="space-y-4">
         <div className="grid gap-2">
-          <Label htmlFor="email">E-mail</Label>
+          <Label isRequired htmlFor="email">
+            E-mail
+          </Label>
           <Input
             id="email"
             type="email"
@@ -25,7 +27,9 @@ export function AccountStep() {
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="password">Password</Label>
+          <Label isRequired htmlFor="password">
+            Password
+          </Label>
           <Input
             id="password"
             type="password"
@@ -36,7 +40,9 @@ export function AccountStep() {
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="confirmPassword">Confirm your password</Label>
+          <Label isRequired htmlFor="confirmPassword">
+            Confirm your password
+          </Label>
           <Input
             id="confirmPassword"
             type="password"

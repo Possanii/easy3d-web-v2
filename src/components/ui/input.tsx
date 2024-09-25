@@ -3,8 +3,8 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-import { Caption } from '../typography/text/caption'
 import { Small } from '../typography/text/small'
+import { SmallDescription } from '../typography/text/small-description'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
-        {description && <Caption>{description}</Caption>}
+        {description && <SmallDescription>{description}</SmallDescription>}
         {error && (
           <div className="text mr-4 flex items-center gap-2">
             <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />

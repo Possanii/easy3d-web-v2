@@ -20,7 +20,9 @@ export function PersonalDataStep() {
 
       <div className="space-y-4">
         <div className="grid gap-2">
-          <Label htmlFor="kind">Kind :</Label>
+          <Label isRequired htmlFor="kind">
+            Kind :
+          </Label>
           <CustomerTypeSelect
             control={form.control}
             name="personalDataStep.kind"
@@ -29,7 +31,9 @@ export function PersonalDataStep() {
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="name">Name :</Label>
+          <Label isRequired htmlFor="name">
+            Name :
+          </Label>
           <Input
             id="name"
             required
@@ -39,7 +43,9 @@ export function PersonalDataStep() {
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="phone">Phone :</Label>
+          <Label isRequired htmlFor="phone">
+            Phone :
+          </Label>
           <InputPhone
             control={form.control}
             name="personalDataStep.phone"
@@ -49,9 +55,11 @@ export function PersonalDataStep() {
           />
         </div>
 
-        <div className="flex gap-2">
+        <div className="grid items-start gap-2 lg:grid-cols-2">
           <div className="flex flex-1 flex-col gap-2">
-            <Label htmlFor="identity">Document :</Label>
+            <Label isRequired htmlFor="identity">
+              Document :
+            </Label>
             <Input
               id="identity"
               required
