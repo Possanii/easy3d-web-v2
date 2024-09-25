@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { useStore } from '@/stores/use-store'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { useShallow } from 'zustand/react/shallow'
-import { PSmall } from '../typography/text/small'
+import { Base } from '../typography/text/base'
 import { Button } from './button'
 import {
   Command,
@@ -39,9 +39,9 @@ export function CountrySwitcher() {
           aria-expanded={openLanguageDropdown}
           className="w-20 justify-between rounded-[6px] border !border-easy3d-primary focus:!outline-none focus:!ring-1 focus:!ring-easy3d-primary focus:!ring-offset-easy3d-primary"
         >
-          <span>
+          <Base>
             {languages ? (
-              <span>
+              <Base>
                 {
                   languages.find(
                     (language) =>
@@ -49,11 +49,11 @@ export function CountrySwitcher() {
                       languageValue.toLowerCase(),
                   )?.flag
                 }
-              </span>
+              </Base>
             ) : (
-              <span>Select Language...</span>
+              <Base>Select Language...</Base>
             )}
-          </span>
+          </Base>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -74,8 +74,8 @@ export function CountrySwitcher() {
                     className="flex cursor-pointer items-center justify-between text-xs hover:!bg-easy3d-primary hover:!text-white"
                   >
                     <div className="flex items-end gap-2">
-                      <PSmall>{language.flag}</PSmall>
-                      <PSmall>{language.language}</PSmall>
+                      <Base>{language.flag}</Base>
+                      <Base>{language.language}</Base>
                     </div>
                     <Check
                       className={cn(

@@ -20,7 +20,8 @@ import { cn } from '@/lib/utils'
 import { lowerCase } from '@/utils/format-string'
 import { useState } from 'react'
 import { Control, Controller } from 'react-hook-form'
-import { PSmall } from '../typography/text/small'
+import { Base } from '../typography/text/base'
+import { Small } from '../typography/text/small'
 import { Button } from './button'
 
 export interface CountryProps {
@@ -90,30 +91,30 @@ const CountryDropdown = ({
                 className="inline-flex h-10 items-center justify-between self-start overflow-hidden rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 disabled={disabled}
               >
-                <span>
+                <Base>
                   {value ? (
                     <div className="flex items-end gap-2">
-                      <span>
+                      <Base>
                         {
                           countries.find(
                             (country) =>
                               lowerCase(country.name) === lowerCase(value),
                           )?.emoji
                         }
-                      </span>
-                      <span className="max-w-[200px] truncate lg:max-w-[140px]">
+                      </Base>
+                      <Base className="max-w-[200px] truncate lg:max-w-[140px]">
                         {
                           countries.find(
                             (country) =>
                               lowerCase(country.name) === lowerCase(value),
                           )?.name
                         }
-                      </span>
+                      </Base>
                     </div>
                   ) : (
-                    <span>Select Country...</span>
+                    <Base>Select Country...</Base>
                   )}
-                </span>
+                </Base>
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
@@ -135,8 +136,8 @@ const CountryDropdown = ({
                           className="flex cursor-pointer items-center justify-between text-xs hover:!bg-easy3d-primary hover:!text-white"
                         >
                           <div className="flex items-end gap-2">
-                            <span>{country.emoji}</span>
-                            <span className="">{country.name}</span>
+                            <Base>{country.emoji}</Base>
+                            <Base>{country.name}</Base>
                           </div>
                           <Check
                             className={cn(
@@ -160,7 +161,7 @@ const CountryDropdown = ({
       {error && (
         <div className="mr-4 flex items-center gap-2">
           <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />
-          <PSmall className="text-destructive">{error}</PSmall>
+          <Small className="text-destructive">{error}</Small>
         </div>
       )}
     </div>

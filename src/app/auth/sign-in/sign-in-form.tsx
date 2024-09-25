@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
+import { Small } from '@/components/typography/text/small'
 import { useSignInFormController } from './use-sign-in-form-controller'
 
 export function SignInForm() {
@@ -32,9 +33,9 @@ export function SignInForm() {
           <Label htmlFor="password">{t('sign-in.password-label-input')}</Label>
           <Link
             to="/auth/forgot-password"
-            className="ml-auto inline-block text-sm underline"
+            className="ml-auto inline-block underline"
           >
-            {t('sign-in.forgot-password')}
+            <Small>{t('sign-in.forgot-password')}</Small>
           </Link>
         </div>
         <Input
@@ -49,7 +50,7 @@ export function SignInForm() {
         {isLoading ? (
           <Loader2 className="size-4 animate-spin" />
         ) : (
-          <Label>{t('sign-in.sign-in-form-button')}</Label>
+          t('sign-in.sign-in-form-button')
         )}
       </Button>
     </form>

@@ -3,15 +3,17 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-import { PSmall } from '../typography/text/small'
+import { Caption } from '../typography/text/caption'
+import { Small } from '../typography/text/small'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
+  description?: string
   error?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error, ...props }, ref) => {
+  ({ className, type, description, error, ...props }, ref) => {
     return (
       <div className="grid w-full gap-2">
         <input
@@ -23,10 +25,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
+        {description && <Caption>{description}</Caption>}
         {error && (
-          <div className="mr-4 flex items-center gap-2">
+          <div className="text mr-4 flex items-center gap-2">
             <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />
-            <PSmall className="text-destructive">{error}</PSmall>
+            <Small className="text-destructive">{error}</Small>
           </div>
         )}
       </div>

@@ -2,13 +2,13 @@ import { ComponentProps } from 'react'
 
 import { cn } from '@/lib/utils'
 
-type ISmall = ComponentProps<'p'>
+type IBase = ComponentProps<'p'>
 
-export function Small({ children, className }: ISmall) {
+export function Base({ children, className }: IBase) {
   return (
     <p
       className={cn(
-        'text-sm font-normal leading-[1.5] text-accent-foreground',
+        'text-balance text-base font-normal leading-[1.5] text-accent-foreground',
         className,
       )}
     >

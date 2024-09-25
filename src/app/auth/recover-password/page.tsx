@@ -1,4 +1,6 @@
 import background from '@/assets/slider-pt.webp'
+import { Base } from '@/components/typography/text/base'
+import { TitleXl } from '@/components/typography/title/title-xl'
 import { RecoverPasswordForm } from './recover-password-form'
 
 export function RecoverPasswordPage() {
@@ -16,10 +18,10 @@ export function RecoverPasswordPage() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Recover Password</h1>
-            <p className="text-balance text-muted-foreground">
+            <TitleXl>Recover Password</TitleXl>
+            <Base className="text-balance text-muted-foreground">
               Enter your new password below to recover your account
-            </p>
+            </Base>
           </div>
           <RecoverPasswordForm />
         </div>

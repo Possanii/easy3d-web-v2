@@ -54,6 +54,7 @@ export function PersonalDataStep() {
               id="identity"
               required
               {...form.register('personalDataStep.identity')}
+              description="oi, belezinha?"
               error={form.formState.errors.personalDataStep?.identity?.message}
             />
           </div>

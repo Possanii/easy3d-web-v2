@@ -21,7 +21,8 @@ import { cn } from '@/lib/utils'
 import { lowerCase, sentenceCase } from '@/utils/format-string'
 import { useState } from 'react'
 import { Control, Controller, UseFormWatch } from 'react-hook-form'
-import { PSmall } from '../typography/text/small'
+import { Base } from '../typography/text/base'
+import { Small } from '../typography/text/small'
 
 export interface StateProps {
   id: number
@@ -67,16 +68,16 @@ const StateDropdown = ({ control, name, error, watch }: StateDropdownProps) => {
               >
                 {value ? (
                   <div className="flex items-end gap-2">
-                    <span className="max-w-[200px] truncate lg:max-w-[140px]">
+                    <Base className="max-w-[200px] truncate lg:max-w-[140px]">
                       {
                         S.find(
                           (state) => lowerCase(state.name) === lowerCase(value),
                         )?.name
                       }
-                    </span>
+                    </Base>
                   </div>
                 ) : (
-                  <span>Select State...</span>
+                  <Base>Select State...</Base>
                 )}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
@@ -99,7 +100,7 @@ const StateDropdown = ({ control, name, error, watch }: StateDropdownProps) => {
                           className="flex cursor-pointer items-center justify-between text-xs hover:!bg-easy3d-primary hover:!text-white"
                         >
                           <div className="flex items-end gap-2">
-                            <span className="">{state.name}</span>
+                            <Base>{state.name}</Base>
                           </div>
                           <Check
                             className={cn(
@@ -123,7 +124,7 @@ const StateDropdown = ({ control, name, error, watch }: StateDropdownProps) => {
       {error && (
         <div className="mr-4 flex items-center gap-2">
           <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />
-          <PSmall className="text-destructive">{error}</PSmall>
+          <Small className="text-destructive">{error}</Small>
         </div>
       )}
     </div>

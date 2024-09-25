@@ -9,7 +9,7 @@ import { AlertCircleIcon } from 'lucide-react'
 import { useState } from 'react'
 import { Control, Controller, UseFormSetValue } from 'react-hook-form'
 import PhoneInput, { type Country } from 'react-phone-number-input/input'
-import { PSmall } from '../typography/text/small'
+import { Small } from '../typography/text/small'
 import { ComboboxCountryInput } from './country-select'
 import { Input } from './input'
 
@@ -89,7 +89,7 @@ export function InputPhone({
           {error && (
             <div className="mr-4 flex items-center gap-2">
               <AlertCircleIcon className="h-[14px] w-[14px] text-destructive" />
-              <PSmall className="text-destructive">{error}</PSmall>
+              <Small className="text-destructive">{error}</Small>
             </div>
           )}
         </div>

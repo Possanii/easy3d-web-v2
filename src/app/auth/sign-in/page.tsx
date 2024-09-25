@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 import background from '@/assets/slider-pt.webp'
 
+import { Base } from '@/components/typography/text/base'
+import { Small } from '@/components/typography/text/small'
+import { TitleXl } from '@/components/typography/title/title-xl'
 import { SignInForm } from './sign-in-form'
 
 export function SignInPage() {
@@ -13,17 +16,19 @@ export function SignInPage() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">{t('sign-in.login')}</h1>
-            <p className="text-balance text-muted-foreground">
-              {t('sign-in.description')}
-            </p>
+            <TitleXl className="text-3xl font-bold">
+              {t('sign-in.login')}
+            </TitleXl>
+            <Base>{t('sign-in.description')}</Base>
           </div>
           <SignInForm />
           <div className="mt-4 text-center text-sm">
-            {t('sign-in.dont-have-an-account')}{' '}
-            <Link to={'/auth/sign-up'} className="underline">
-              {t('sign-in.sign-up')}
-            </Link>
+            <Small>
+              {t('sign-in.dont-have-an-account')}{' '}
+              <Link to={'/auth/sign-up'} className="underline">
+                {t('sign-in.sign-up')}
+              </Link>
+            </Small>
           </div>
         </div>
       </div>

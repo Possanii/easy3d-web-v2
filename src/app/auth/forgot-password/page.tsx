@@ -2,6 +2,9 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import background from '@/assets/slider-pt.webp'
+import { Base } from '@/components/typography/text/base'
+import { Small } from '@/components/typography/text/small'
+import { TitleXl } from '@/components/typography/title/title-xl'
 import { ForgotPasswordForm } from './forgot-password-form'
 
 export function ForgotPasswordPage() {
@@ -21,20 +24,18 @@ export function ForgotPasswordPage() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">
-              {t('forgot-password.forgot-password')}
-            </h1>
-            <p className="text-balance text-muted-foreground">
+            <TitleXl>{t('forgot-password.forgot-password')}</TitleXl>
+            <Base>
               {t('forgot-password.enter-your-email-to-recover-password')}
-            </p>
+            </Base>
           </div>
           <ForgotPasswordForm />
-          <div className="mt-4 text-center text-sm">
+          <Small className="mt-4 text-center">
             {t('forgot-password.did-you-remember-your-password')}{' '}
             <Link to={'/auth/sign-in'} className="underline">
               {t('forgot-password.sign-in')}
             </Link>
-          </div>
+          </Small>
         </div>
       </div>
     </div>
