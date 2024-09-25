@@ -13,10 +13,10 @@ export function WorkspaceLayout() {
           <div className="h-full rounded-md border-2 border-dashed p-2">
             <SidebarTrigger />
             <LanguageSwitcher />
+            <Outlet />
           </div>
         </main>
       </SidebarLayout>
-      <Outlet />
     </>
   )
 }

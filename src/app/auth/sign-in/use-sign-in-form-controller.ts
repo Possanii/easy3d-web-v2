@@ -37,7 +37,7 @@ export function useSignInFormController() {
     try {
       await SignInWithPassword(form)
 
-      signIn()
+      await signIn()
     } catch (err) {
       if (err instanceof AxiosError) {
         const data = await err.response?.data

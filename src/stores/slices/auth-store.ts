@@ -1,4 +1,5 @@
 import { logout } from '@/http/auth/logout'
+import { getUserProfile } from '@/http/user/get-user-profile'
 import { clearStorages } from '@/utils/clear-storages'
 import { StoreSlice } from '../use-store'
 
@@ -7,7 +8,7 @@ type AuthVariables = {
 }
 
 type AuthActions = {
-  signIn: () => void
+  signIn: () => Promise<void>
   logout: () => void
 }
 
@@ -15,7 +16,8 @@ export type AuthStore = AuthVariables & AuthActions
 
 export const createAuthSlice: StoreSlice<AuthStore> = (set) => ({
   isLoggedIn: false,
-  signIn: () => {
+  signIn: async () => {
+    await getUserProfile()
     set(() => ({
       isLoggedIn: true,
     }))
