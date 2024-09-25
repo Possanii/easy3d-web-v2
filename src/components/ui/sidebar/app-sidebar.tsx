@@ -30,9 +30,8 @@ import { NavMain } from '@/components/ui/sidebar/nav-main'
 import { NavProjects } from '@/components/ui/sidebar/nav-projects'
 import { NavSecondary } from '@/components/ui/sidebar/nav-secondary'
 import { NavUser } from '@/components/ui/sidebar/nav-user'
-import { StorageCard } from '@/components/ui/sidebar/storage-card'
-import { TeamSwitcher } from '@/components/ui/sidebar/team-switcher'
 import { useUser } from '@/hooks/use-user'
+import { NavHeader } from './nav-header'
 
 const data = {
   teams: [
@@ -247,8 +246,8 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+      <SidebarHeader className="bg-red-600">
+        <NavHeader />
       </SidebarHeader>
       <SidebarContent>
         <SidebarItem>
@@ -262,9 +261,6 @@ export function AppSidebar() {
         <SidebarItem className="mt-auto">
           <SidebarLabel>Help</SidebarLabel>
           <NavSecondary items={data.navSecondary} />
-        </SidebarItem>
-        <SidebarItem>
-          <StorageCard />
         </SidebarItem>
       </SidebarContent>
       <SidebarFooter>
