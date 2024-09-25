@@ -1,21 +1,19 @@
 import {
-  Atom,
-  Bird,
-  BookOpen,
-  Bot,
-  Code2,
-  Eclipse,
-  Frame,
-  History,
+  Archive,
+  BookCheck,
+  Bookmark,
+  ClipboardCheck,
+  File,
+  FolderOpen,
+  Hospital,
+  IdCard,
+  LayoutDashboard,
   LifeBuoy,
-  Map,
-  PieChart,
-  Rabbit,
   Send,
-  Settings2,
-  SquareTerminal,
-  Star,
-  Turtle,
+  TicketPlus,
+  Tickets,
+  User,
+  UserPlus,
 } from 'lucide-react'
 
 import {
@@ -27,154 +25,97 @@ import {
   SidebarLabel,
 } from '@/components/ui/sidebar'
 import { NavMain } from '@/components/ui/sidebar/nav-main'
-import { NavProjects } from '@/components/ui/sidebar/nav-projects'
-import { NavSecondary } from '@/components/ui/sidebar/nav-secondary'
 import { NavUser } from '@/components/ui/sidebar/nav-user'
 import { useUser } from '@/hooks/use-user'
+import { NavEmployeeArea } from './nav-employee-area'
 import { NavHeader } from './nav-header'
 
 const data = {
-  teams: [
-    {
-      name: 'Acme Inc',
-      logo: Atom,
-      plan: 'Enterprise',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: Eclipse,
-      plan: 'Startup',
-    },
-    {
-      name: 'Evil Corp.',
-      logo: Rabbit,
-      plan: 'Free',
-    },
-  ],
   navMain: [
     {
-      title: 'Playground',
+      title: 'Dashboard',
+      url: '/dashboard',
+      icon: LayoutDashboard,
+      description: 'See your company progress.',
+    },
+    {
+      title: 'Register',
       url: '#',
-      icon: SquareTerminal,
-      isActive: true,
+      icon: UserPlus,
+      isActive: false,
       items: [
         {
-          title: 'History',
-          url: '#',
-          icon: History,
-          description: 'View your recent prompts',
+          title: 'Patients',
+          url: '/user/patients',
+          icon: User,
+          description: 'Manage your patients.',
         },
         {
-          title: 'Starred',
-          url: '#',
-          icon: Star,
-          description: 'Browse your starred prompts',
+          title: 'Customers',
+          url: '/user/customers',
+          icon: Hospital,
+          description: 'Manage your customers.',
         },
         {
-          title: 'Settings',
-          url: '#',
-          icon: Settings2,
-          description: 'Configure your playground',
+          title: 'Employees',
+          url: '/user/employees',
+          icon: IdCard,
+          description: 'Manage your employees.',
+        },
+        {
+          title: 'Services',
+          url: '/services',
+          icon: ClipboardCheck,
+          description: 'Manage your services.',
         },
       ],
     },
     {
-      title: 'Models',
+      title: 'Orders',
       url: '#',
-      icon: Bot,
+      icon: Tickets,
+      isActive: false,
       items: [
         {
-          title: 'Genesis',
-          url: '#',
-          icon: Rabbit,
-          description: 'Our fastest model for general use cases.',
+          title: 'New order',
+          url: '/create/order',
+          icon: TicketPlus,
+          description: 'Create a new order.',
         },
         {
-          title: 'Explorer',
-          url: '#',
-          icon: Bird,
-          description: 'Performance and speed for efficiency.',
+          title: 'My orders',
+          url: '/my-orders',
+          icon: BookCheck,
+          description: 'Manage your orders.',
         },
         {
-          title: 'Quantum',
-          url: '#',
-          icon: Turtle,
-          description: 'The most powerful model for complex computations.',
+          title: 'Old orders',
+          url: '/old-orders',
+          icon: Archive,
+          description: 'Manage your old orders.',
         },
       ],
     },
+  ],
+
+  navEmployeeArea: [
     {
-      title: 'Documentation',
-      url: '#',
-      icon: BookOpen,
-      items: [
-        {
-          title: 'Introduction',
-          url: '#',
-        },
-        {
-          title: 'Get Started',
-          url: '#',
-        },
-        {
-          title: 'Tutorials',
-          url: '#',
-        },
-        {
-          title: 'Changelog',
-          url: '#',
-        },
-      ],
+      name: 'View orders',
+      url: '/orders',
+      icon: FolderOpen,
+      description: 'See all orders in progress.',
     },
     {
-      title: 'API',
-      url: '#',
-      icon: Code2,
-      items: [
-        {
-          title: 'Chat',
-          url: '#',
-        },
-        {
-          title: 'Completion',
-          url: '#',
-        },
-        {
-          title: 'Images',
-          url: '#',
-        },
-        {
-          title: 'Video',
-          url: '#',
-        },
-        {
-          title: 'Speech',
-          url: '#',
-        },
-      ],
+      name: 'Order in progress',
+      url: '/work-order',
+      icon: File,
+      description: 'Continue your work.',
     },
     {
-      title: 'Settings',
-      url: '#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
-        },
-        {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
-        },
-      ],
+      name: 'Bookeds',
+      url: '/bookeds-orders',
+      icon: Bookmark,
+      description: 'Manage your bookeds orders.',
     },
   ],
 
@@ -190,55 +131,6 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: 'Design Engineering',
-      url: '#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '#',
-      icon: Map,
-    },
-  ],
-  searchResults: [
-    {
-      title: 'Routing Fundamentals',
-      teaser:
-        'The skeleton of every application is routing. This page will introduce you to the fundamental concepts of routing for the web and how to handle routing in Next.js.',
-      url: '#',
-    },
-    {
-      title: 'Layouts and Templates',
-      teaser:
-        'The special files layout.js and template.js allow you to create UI that is shared between routes. This page will guide you through how and when to use these special files.',
-      url: '#',
-    },
-    {
-      title: 'Data Fetching, Caching, and Revalidating',
-      teaser:
-        'Data fetching is a core part of any application. This page goes through how you can fetch, cache, and revalidate data in React and Next.js.',
-      url: '#',
-    },
-    {
-      title: 'Server and Client Composition Patterns',
-      teaser:
-        'When building React applications, you will need to consider what parts of your application should be rendered on the server or the client. ',
-      url: '#',
-    },
-    {
-      title: 'Server Actions and Mutations',
-      teaser:
-        'Server Actions are asynchronous functions that are executed on the server. They can be used in Server and Client Components to handle form submissions and data mutations in Next.js applications.',
-      url: '#',
-    },
-  ],
 }
 
 export function AppSidebar() {
@@ -252,16 +144,16 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarItem>
           <SidebarLabel>Platform</SidebarLabel>
-          <NavMain items={data.navMain} searchResults={data.searchResults} />
+          <NavMain items={data.navMain} />
         </SidebarItem>
         <SidebarItem>
-          <SidebarLabel>Projects</SidebarLabel>
-          <NavProjects projects={data.projects} />
+          <SidebarLabel>Employee Area</SidebarLabel>
+          <NavEmployeeArea items={data.navEmployeeArea} />
         </SidebarItem>
-        <SidebarItem className="mt-auto">
+        {/* <SidebarItem className="mt-auto">
           <SidebarLabel>Help</SidebarLabel>
           <NavSecondary items={data.navSecondary} />
-        </SidebarItem>
+        </SidebarItem> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user!} />
