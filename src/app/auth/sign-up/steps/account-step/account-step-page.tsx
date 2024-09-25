@@ -35,6 +35,7 @@ export function AccountStep() {
             type="password"
             required
             {...form.register('accountStep.password')}
+            description="Your password must contain at least one uppercase letter, one lowercase letter, one symbol, and be at least 8 characters long."
             error={form.formState.errors.accountStep?.password?.message}
           />
         </div>
