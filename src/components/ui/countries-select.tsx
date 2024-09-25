@@ -91,7 +91,7 @@ const CountryDropdown = ({
                 className="inline-flex h-10 items-center justify-between self-start overflow-hidden rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 disabled={disabled}
               >
-                <Base>
+                <div className="flex items-center justify-between">
                   {value ? (
                     <div className="flex items-end gap-2">
                       <Base>
@@ -102,7 +102,7 @@ const CountryDropdown = ({
                           )?.emoji
                         }
                       </Base>
-                      <Base className="max-w-[200px] truncate lg:max-w-[140px]">
+                      <Base className="max-w-[200px] truncate text-nowrap lg:max-w-[140px]">
                         {
                           countries.find(
                             (country) =>
@@ -114,8 +114,8 @@ const CountryDropdown = ({
                   ) : (
                     <Base>Select Country...</Base>
                   )}
-                </Base>
-                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </div>
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[250px] rounded-[6px] p-0">
