@@ -73,7 +73,7 @@ const SidebarTrigger = React.forwardRef<
       ref={ref}
       variant="ghost"
       size="icon"
-      className={cn('h-8 w-8', className)}
+      className={cn('h-8 w-8 text-center', className)}
       onClick={() => onOpenChange(!open)}
       {...props}
     >
