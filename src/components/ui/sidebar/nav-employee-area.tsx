@@ -1,8 +1,8 @@
 import { type LucideIcon } from 'lucide-react'
-
-import { cn } from '@/lib/utils'
 import { Link } from 'react-router-dom'
+
 import { Small } from '@/components/typography/text/small'
+import { cn } from '@/lib/utils'
 
 export function NavEmployeeArea({
   items,

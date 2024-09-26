@@ -1,4 +1,6 @@
 import { AlertCircleIcon, Check, ChevronsUpDown } from 'lucide-react'
+import { useState } from 'react'
+import { Control, Controller, UseFormWatch } from 'react-hook-form'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -15,12 +17,10 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-
 import states from '@/data/states.json'
 import { cn } from '@/lib/utils'
 import { lowerCase, sentenceCase } from '@/utils/format-string'
-import { useState } from 'react'
-import { Control, Controller, UseFormWatch } from 'react-hook-form'
+
 import { Base } from '../typography/text/base'
 import { Small } from '../typography/text/small'
 
@@ -37,7 +37,9 @@ export interface StateProps {
 }
 
 interface StateDropdownProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   watch: UseFormWatch<any>
   name: string
   error?: string

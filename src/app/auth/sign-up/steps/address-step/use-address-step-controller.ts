@@ -1,8 +1,9 @@
-import { FormData } from '@/app/auth/sign-up/sign-up-form'
-import { getUserLocale } from '@/utils/get-user-locale'
 import { useFormContext } from 'react-hook-form'
 import { isPostalCode, PostalCodeLocale } from 'validator'
 import { z } from 'zod'
+
+import { FormData } from '@/app/auth/sign-up/sign-up-form'
+import { getUserLocale } from '@/utils/get-user-locale'
 
 export const addressStepSchema = z.object({
   street: z.string().min(1, 'Please, provide a valid street.'),

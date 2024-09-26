@@ -1,4 +1,3 @@
-import { RecoverPassword } from '@/http/auth/recover-password'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AxiosError } from 'axios'
 import { t } from 'i18next'
@@ -6,6 +5,8 @@ import { useForm } from 'react-hook-form'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
+
+import { RecoverPassword } from '@/http/auth/recover-password'
 
 const recoverPasswordSchema = z.object({
   password: z.string().min(8),

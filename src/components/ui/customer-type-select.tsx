@@ -1,6 +1,7 @@
 import { AlertCircleIcon } from 'lucide-react'
 import { Control, Controller } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+
 import { Small } from '../typography/text/small'
 import {
   Select,
@@ -11,6 +12,7 @@ import {
 } from './select'
 
 interface ICustomerTypeSelectProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
   name: string
   error?: string

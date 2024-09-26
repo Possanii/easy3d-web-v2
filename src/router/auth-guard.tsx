@@ -1,6 +1,7 @@
-import { useStore } from '@/stores/use-store'
 import { Navigate, Outlet } from 'react-router-dom'
 import { useShallow } from 'zustand/react/shallow'
+
+import { useStore } from '@/stores/use-store'
 
 interface AuthGuardProps {
   isPrivate: boolean

@@ -2,11 +2,11 @@ import { Loader2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
+import { Small } from '@/components/typography/text/small'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-import { Small } from '@/components/typography/text/small'
 import { useSignInFormController } from './use-sign-in-form-controller'
 
 export function SignInForm() {

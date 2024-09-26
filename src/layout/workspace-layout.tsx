@@ -1,8 +1,9 @@
+import Cookies from 'js-cookie'
+import { Outlet } from 'react-router-dom'
+
 import { AppNavbar } from '@/components/ui/navbar/app-navbar'
 import { SidebarLayout } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/ui/sidebar/app-sidebar'
-import Cookies from 'js-cookie'
-import { Outlet } from 'react-router-dom'
 
 export function WorkspaceLayout() {
   return (

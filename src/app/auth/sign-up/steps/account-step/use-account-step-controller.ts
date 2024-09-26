@@ -1,8 +1,9 @@
-import { FormData } from '@/app/auth/sign-up/sign-up-form'
-import { useStepper } from '@/components/ui/stepper/useStepper'
 import { useFormContext } from 'react-hook-form'
 import { isStrongPassword } from 'validator'
 import { z } from 'zod'
+
+import { FormData } from '@/app/auth/sign-up/sign-up-form'
+import { useStepper } from '@/components/ui/stepper/useStepper'
 
 export const accountStepSchema = z
   .object({

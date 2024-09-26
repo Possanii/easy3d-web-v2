@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { permissionsSchema } from '@/schemas/permissions'
+
 import { roleSchema } from '../roles'
 
 export const userSchema = z.object({

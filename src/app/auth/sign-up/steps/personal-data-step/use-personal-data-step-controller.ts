@@ -1,11 +1,12 @@
-import { FormData } from '@/app/auth/sign-up/sign-up-form'
-import { useStepper } from '@/components/ui/stepper/useStepper'
-import { GetCountryBasedOnTimezone } from '@/utils/get-country-based-on-timezone'
-import { getUserLocale } from '@/utils/get-user-locale'
 import { isValidPhoneNumber } from 'libphonenumber-js'
 import { useFormContext } from 'react-hook-form'
 import { isPassportNumber } from 'validator'
 import { z } from 'zod'
+
+import { FormData } from '@/app/auth/sign-up/sign-up-form'
+import { useStepper } from '@/components/ui/stepper/useStepper'
+import { GetCountryBasedOnTimezone } from '@/utils/get-country-based-on-timezone'
+import { getUserLocale } from '@/utils/get-user-locale'
 
 export const personalDataStepSchema = z
   .object({

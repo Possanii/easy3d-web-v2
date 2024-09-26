@@ -1,8 +1,10 @@
+import { Check, ChevronsUpDown } from 'lucide-react'
+import { useShallow } from 'zustand/react/shallow'
+
 import { languages } from '@/data/languages'
 import { cn } from '@/lib/utils'
 import { useStore } from '@/stores/use-store'
-import { Check, ChevronsUpDown } from 'lucide-react'
-import { useShallow } from 'zustand/react/shallow'
+
 import { Base } from '../typography/text/base'
 import { Button } from './button'
 import {

@@ -1,6 +1,7 @@
 import { logout } from '@/http/auth/logout'
 import { getUserProfile } from '@/http/user/get-user-profile'
 import { clearStorages } from '@/utils/clear-storages'
+
 import { StoreSlice } from '../use-store'
 
 type AuthVariables = {

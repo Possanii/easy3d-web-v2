@@ -1,6 +1,7 @@
 import background from '@/assets/slider-pt.webp'
 import { Base } from '@/components/typography/text/base'
 import { TitleXl } from '@/components/typography/title/title-xl'
+
 import { RecoverPasswordForm } from './recover-password-form'
 
 export function RecoverPasswordPage() {

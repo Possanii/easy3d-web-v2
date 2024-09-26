@@ -1,8 +1,11 @@
-import { cpfCnpjMask } from '@/helpers/cpf-cnpj-mask'
 import { Control, Controller } from 'react-hook-form'
+
+import { cpfCnpjMask } from '@/helpers/cpf-cnpj-mask'
+
 import { Input } from './input'
 
 interface IInputCpfCpnjProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
   name: string
   error?: string

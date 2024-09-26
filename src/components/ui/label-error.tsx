@@ -1,5 +1,7 @@
-import { cn } from '@/lib/utils'
 import { AlertCircleIcon } from 'lucide-react'
+
+import { cn } from '@/lib/utils'
+
 import { Small } from '../typography/text/small'
 
 export interface ILabelError

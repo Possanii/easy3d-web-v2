@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import background from '@/assets/slider-pt.webp'
-
 import { Base } from '@/components/typography/text/base'
 import { Small } from '@/components/typography/text/small'
 import { TitleXl } from '@/components/typography/title/title-xl'
+
 import { SignInForm } from './sign-in-form'
 
 export function SignInPage() {

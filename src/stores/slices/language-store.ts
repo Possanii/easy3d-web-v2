@@ -1,4 +1,5 @@
 import i18n from '@/lib/i18n'
+
 import { StoreSlice } from '../use-store'
 
 type LanguageVariables = {

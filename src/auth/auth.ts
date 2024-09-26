@@ -1,5 +1,7 @@
-import { IUserData } from '@/hooks/use-user'
 import Cookies from 'js-cookie'
+
+import { IUserData } from '@/hooks/use-user'
+
 import { defineAbilityFor } from '.'
 
 export function ability(isId: boolean = true) {

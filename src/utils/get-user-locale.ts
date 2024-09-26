@@ -1,4 +1,5 @@
 import countries from '@/data/countries.json'
+
 import { GetCountryBasedOnTimezone } from './get-country-based-on-timezone'
 
 export function getUserLocale(): string {

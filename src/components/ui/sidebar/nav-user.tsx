@@ -1,4 +1,6 @@
 import { BadgeCheck, ChevronsUpDown, LogOut } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { useShallow } from 'zustand/react/shallow'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
@@ -12,8 +14,6 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { IUserData } from '@/hooks/use-user'
 import { useStore } from '@/stores/use-store'
-import { Link } from 'react-router-dom'
-import { useShallow } from 'zustand/react/shallow'
 
 export function NavUser({ user: { name, email } }: { user: IUserData }) {
   const { logout } = useStore(

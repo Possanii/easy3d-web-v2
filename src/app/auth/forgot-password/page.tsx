@@ -5,6 +5,7 @@ import background from '@/assets/slider-pt.webp'
 import { Base } from '@/components/typography/text/base'
 import { Small } from '@/components/typography/text/small'
 import { TitleXl } from '@/components/typography/title/title-xl'
+
 import { ForgotPasswordForm } from './forgot-password-form'
 
 export function ForgotPasswordPage() {

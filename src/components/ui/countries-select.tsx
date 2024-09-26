@@ -1,4 +1,6 @@
 import { AlertCircleIcon, Check, ChevronsUpDown } from 'lucide-react'
+import { useState } from 'react'
+import { Control, Controller } from 'react-hook-form'
 
 import {
   Command,
@@ -14,16 +16,21 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-
 import countries from '@/data/countries.json'
 import { cn } from '@/lib/utils'
 import { lowerCase } from '@/utils/format-string'
-import { useState } from 'react'
-import { Control, Controller } from 'react-hook-form'
+
 import { Base } from '../typography/text/base'
 import { Small } from '../typography/text/small'
 import { Button } from './button'
 
+interface Timezone {
+  zoneName: string
+  gmtOffset: number
+  gmtOffsetName: string
+  abbreviation: string
+  tzName: string
+}
 export interface CountryProps {
   id: number
   name: string
@@ -50,16 +57,9 @@ export interface CountryProps {
   emojiU: string
 }
 
-interface Timezone {
-  zoneName: string
-  gmtOffset: number
-  gmtOffsetName: string
-  abbreviation: string
-  tzName: string
-}
-
 interface CountryDropdownProps {
   disabled?: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
   name: string
   error?: string

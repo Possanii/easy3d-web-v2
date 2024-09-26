@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom'
+
 import Logo from '@/assets/logo-easy-subtitle.webp'
 import { Base } from '@/components/typography/text/base'
 import { TitleXl } from '@/components/typography/title/title-xl'
 import { Button } from '@/components/ui/button'
-import { useNavigate } from 'react-router-dom'
 
 export function Page404() {
   const navigate = useNavigate()

@@ -1,3 +1,5 @@
+import { Controller } from 'react-hook-form'
+
 import { Base } from '@/components/typography/text/base'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -8,7 +10,7 @@ import { LabelError } from '@/components/ui/label-error'
 import { StepHeader } from '@/components/ui/multi-step-header'
 import StateDropdown from '@/components/ui/states-select'
 import { StepperFooter, StepperPreviousButton } from '@/components/ui/stepper'
-import { Controller } from 'react-hook-form'
+
 import { useAddressStepController } from './use-address-step-controller'
 
 export function AddressStep() {

@@ -1,6 +1,3 @@
-import { Stepper } from '@/components/ui/stepper'
-import { signUpCustomer } from '@/http/auth/sign-up-customer'
-import { safeSessionStorageGetItem } from '@/utils/safe-session-storage-get-item'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AxiosError } from 'axios'
 import { useEffect } from 'react'
@@ -9,6 +6,11 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
+
+import { Stepper } from '@/components/ui/stepper'
+import { signUpCustomer } from '@/http/auth/sign-up-customer'
+import { safeSessionStorageGetItem } from '@/utils/safe-session-storage-get-item'
+
 import { AccountStep } from './steps/account-step/account-step-page'
 import { accountStepSchema } from './steps/account-step/use-account-step-controller'
 import { AddressStep } from './steps/address-step/page'

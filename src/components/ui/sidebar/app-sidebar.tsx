@@ -27,6 +27,7 @@ import {
 import { NavMain } from '@/components/ui/sidebar/nav-main'
 import { NavUser } from '@/components/ui/sidebar/nav-user'
 import { useUser } from '@/hooks/use-user'
+
 import { NavEmployeeArea } from './nav-employee-area'
 import { NavHeader } from './nav-header'
 
@@ -39,26 +40,26 @@ const data = {
       description: 'See your company progress.',
     },
     {
-      title: 'Register',
+      title: 'Management',
       url: '#',
       icon: UserPlus,
       isActive: false,
       items: [
         {
           title: 'Patients',
-          url: '/user/patients',
+          url: '/users',
           icon: User,
           description: 'Manage your patients.',
         },
         {
           title: 'Customers',
-          url: '/user/customers',
+          url: '/customers',
           icon: Hospital,
           description: 'Manage your customers.',
         },
         {
           title: 'Employees',
-          url: '/user/employees',
+          url: '/employees',
           icon: IdCard,
           description: 'Manage your employees.',
         },
@@ -78,7 +79,7 @@ const data = {
       items: [
         {
           title: 'New order',
-          url: '/create/order',
+          url: '/order',
           icon: TicketPlus,
           description: 'Create a new order.',
         },

@@ -1,10 +1,11 @@
-import { requestRecoverPassword } from '@/http/auth/request-recover-password'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AxiosError } from 'axios'
 import { t } from 'i18next'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
+
+import { requestRecoverPassword } from '@/http/auth/request-recover-password'
 
 const forgotPasswordSchema = z.object({
   email: z.string().email(),

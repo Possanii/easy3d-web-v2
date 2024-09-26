@@ -1,11 +1,12 @@
+import Cookies from 'js-cookie'
+import { useShallow } from 'zustand/react/shallow'
+
 import { IAddress } from '@/schemas/address'
 import { ICustomerTypes } from '@/schemas/customer-types'
 import { IPermissions } from '@/schemas/permissions'
 import { IRole } from '@/schemas/roles'
 import { IUserType } from '@/schemas/user-types'
 import { useStore } from '@/stores/use-store'
-import Cookies from 'js-cookie'
-import { useShallow } from 'zustand/react/shallow'
 
 export interface IUserData {
   id: string
@@ -55,7 +56,7 @@ export function useUser() {
     const parsedUserData = JSON.parse(jsonPart!) as IUserData
 
     return parsedUserData
-  } catch (err) {
+  } catch {
     logout()
   }
 }

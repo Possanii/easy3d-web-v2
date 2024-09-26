@@ -1,4 +1,5 @@
 import { ChevronsUpDown, type LucideIcon } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 import { Small } from '@/components/typography/text/small'
 import { Button } from '@/components/ui/button'
@@ -8,7 +9,6 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
 import { cn } from '@/lib/utils'
-import { Link } from 'react-router-dom'
 
 export function NavMain({
   className,

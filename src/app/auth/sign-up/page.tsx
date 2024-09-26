@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import background from '@/assets/slider-pt.webp'
 import { Small } from '@/components/typography/text/small'
-import { Link } from 'react-router-dom'
+
 import { SignUpForm } from './sign-up-form'
 
 export function SignUpPage() {

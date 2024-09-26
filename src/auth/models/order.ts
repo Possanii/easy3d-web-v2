@@ -1,5 +1,6 @@
-import { orderStepsSchema } from '@/schemas/order'
 import { z } from 'zod'
+
+import { orderStepsSchema } from '@/schemas/order'
 
 export const orderSchema = z.object({
   __typename: z.literal('Order').default('Order'),
