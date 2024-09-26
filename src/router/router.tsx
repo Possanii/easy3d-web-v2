@@ -5,6 +5,7 @@ import { SignInPage } from '@/app/auth/sign-in/page'
 import { SignUpPage } from '@/app/auth/sign-up/page'
 import { DashboardPage } from '@/app/dashboard/page'
 
+import { Page404 } from '@/app/404'
 import { RecoverPasswordPage } from '@/app/auth/recover-password/page'
 import { WorkspaceLayout } from '@/layout/workspace-layout'
 import { AuthGuard } from './auth-guard'
@@ -30,6 +31,8 @@ export function Router() {
             <Route path="/" element={<DashboardPage />} />
           </Route>
         </Route>
+
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
   )

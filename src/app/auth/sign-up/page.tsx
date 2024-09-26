@@ -19,9 +19,9 @@ export function SignUpPage() {
         <div className="mx-auto grid w-[450px] gap-6">
           <SignUpForm />
           <Small className="mt-4 text-center">
-            Do you already have an account?{' '}
+            Already have an account?{' '}
             <Link to={'/auth/sign-in'} className="underline">
-              Sign in
+              Sign in instead
             </Link>
           </Small>
         </div>
