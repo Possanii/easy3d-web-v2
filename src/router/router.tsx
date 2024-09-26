@@ -6,7 +6,7 @@ import { RecoverPasswordPage } from '@/app/auth/recover-password/page'
 import { SignInPage } from '@/app/auth/sign-in/page'
 import { SignUpPage } from '@/app/auth/sign-up/page'
 import { DashboardPage } from '@/app/dashboard/page'
-import { ManagePatientsPage } from '@/app/management/patients'
+import { ManageUsersPage } from '@/app/management/users/page'
 import { WorkspaceLayout } from '@/layout/workspace-layout'
 
 import { AuthGuard } from './auth-guard'
@@ -30,7 +30,7 @@ export function Router() {
         <Route element={<AuthGuard isPrivate />}>
           <Route element={<WorkspaceLayout />}>
             <Route path="/" element={<DashboardPage />} />
-            <Route path="/users" element={<ManagePatientsPage />} />
+            <Route path="/users" element={<ManageUsersPage />} />
           </Route>
         </Route>
 
