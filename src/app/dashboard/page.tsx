@@ -1,14 +1,16 @@
+import { ability } from '@/auth/auth'
 import { useUser } from '@/hooks/use-user'
-import { Suspense } from 'react'
 
 export function DashboardPage() {
   const user = useUser()
 
+  const permissions = ability()
+
+  console.log(permissions?.can('get', 'User'))
+
   return (
     <div>
-      <Suspense fallback={'Loading...'}>
-        <pre>{JSON.stringify(user!, null, 2)}</pre>
-      </Suspense>
+      <pre>{JSON.stringify(user!, null, 2)}</pre>
     </div>
   )
 }
